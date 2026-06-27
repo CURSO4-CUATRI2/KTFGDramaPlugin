@@ -1,0 +1,17 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\x64\\UnrealGame\\Development\\KTFGDramaPlugin\\Module.KTFGDramaPlugin.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\KTFGDramaPlugin\\KTFGDramaPlugin.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\KTFGDramaPlugin\\KTFGBlueprintLibrary.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\KTFGDramaPlugin\\KTFGDramaSubsystem.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\KTFGDramaPlugin\\KTFGRomanceCharacterBase.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\KTFGDramaPlugin\\KTFGEmotionComponent.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\KTFGDramaPlugin\\KTFGRelationshipComponent.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\KTFGDramaPlugin\\KTFGCharacterPersonalityData.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\KTFGDramaPlugin\\KTFGRelationshipConfigData.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\KTFGDramaPlugin\\KTFGRelationshipEventData.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\KTFGDramaPlugin\\KTFGRomancePhases.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\KTFGDramaPlugin\\KTFGRomanceTropeData.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\KTFGDramaPlugin\\KTFGSituationData.cpp.obj"
+	]
+}
