@@ -40,11 +40,41 @@ KTFGDramaPlugin/
 │   ├── KTFGComponents/    # UKTFGEmotionComponent, UKTFGRelationshipComponent
 │   ├── KTFGData/          # Todos los DataAssets del plugin
 │   └── KTFGSubsystem/     # UKTFGDramaSubsystem, UKTFGBlueprintLibrary
-├── Content/               # DataAssets de ejemplo y Blueprints de la demo
-│   ├── DA_RelationshipConfig_Demo
-│   ├── DA_Trope_EnemiestoLovers
-│   ├── DA_Trope_FriendstoLovers
-│   └── ...
+Content/                              # DataAssets de ejemplo y Blueprints de la demo
+├── Blueprints/
+│   ├── KTFGBase/
+│   │   ├── BP_KTFGGameMode
+│   │   └── DA_RelationsConfig
+│   ├── KTFGCharacters/
+│   │   ├── BP_Character_Female_01
+│   │   ├── BP_Character_Male_01
+│   │   └── KTFG Personalities/
+│   │       ├── DA_KTFGPersonality_ColdProud
+│   │       ├── DA_KTFGPersonality_DeterminedEmpathetic
+│   │       ├── DA_KTFGPersonality_HurtIntense
+│   │       ├── DA_KTFGPersonality_HurtPractical
+│   │       ├── DA_KTFGPersonality_ProtectorReserved
+│   │       └── DA_KTFGPersonality_WarmStraightforward
+│   ├── KTFGEvents/
+│   │   ├── DA_Ev_Confession
+│   │   ├── DA_Ev_EmotionalOpening
+│   │   ├── DA_Ev_FirstConnection
+│   │   └── DA_Ev_StrongArgument
+│   ├── KTFGSituations/
+│   │   ├── DA_Sit_Argue
+│   │   ├── DA_Sit_Confess
+│   │   ├── DA_Sit_Help
+│   │   ├── DA_Sit_OpenUp
+│   │   ├── DA_Sit_Talk
+│   │   └── DA_Sit_Tease
+│   └── KTFGTropes/
+│       ├── DA_Trope_EnemiesToLovers
+│       ├── DA_Trope_FatedLove
+│       ├── DA_Trope_FriendsToLovers
+│       └── DA_Trope_StarCrossedLovers
+└── Demo/
+    ├── LV_Demo.umap
+    └── WBP_KTFGDebugHUD
 ├── Resources/
 │   └── Icon128.png
 └── KTFGDramaPlugin.uplugin
@@ -54,7 +84,7 @@ KTFGDramaPlugin/
 
 ## Requisitos
 
-- Unreal Engine 5.3 o superior
+- Unreal Engine 5.6 o superior
 - Visual Studio 2022 (Windows) con soporte para C++17
 - Módulo de editor habilitado para usar la validación de DataAssets en el editor
 
@@ -66,7 +96,7 @@ KTFGDramaPlugin/
 2. Copia la carpeta `KTFGDramaPlugin/` en el directorio `Plugins/` de tu proyecto Unreal.  
    Si no existe la carpeta `Plugins/`, créala en la raíz del proyecto.
 3. Abre el proyecto en Unreal Engine. El motor detectará el plugin automáticamente.
-4. Actívalo en **Edit → Plugins → busca "KTFG"** y marca el checkbox.
+4. Actívalo en **Edit → Plugins → busca "KTFG"** y marca el checkbox, si no está ya activo.
 5. Reinicia el editor cuando se solicite.
 6. El plugin compila automáticamente al reabrir el proyecto.
 
@@ -122,14 +152,14 @@ RelationshipComponent → Bind Event to OnRelationshipEventFired
 
 El repositorio incluye una escena de demo con dos personajes, **Seo Jun** (`SeoJun`) y **Ha Eun** (`HaEun`), configurados con el tropo `DA_Trope_EnemiestoLovers` (Affection=5, Trust=0, Pride=80).
 
-| Tecla | Situación | Condición de acceso |
-|-------|-----------|---------------------|
-| 1 | Talk | Ninguna |
-| 2 | Help | Ninguna |
-| 3 | Tease | Ninguna |
-| 4 | Argue | Ninguna |
-| 5 | OpenUp | Fase ≥ Development |
-| 6 | Confess | Fase ≥ Conflict |
+| Situación | Condición de acceso |
+|-----------|---------------------|
+| Talk | Ninguna |
+| Help | Ninguna |
+| Tease | Ninguna |
+| Argue | Ninguna |
+| OpenUp | Fase ≥ Development |
+| Confess | Fase ≥ Conflict |
 
 El HUD de debug (`WBP_KTFGDebugHUD`) muestra en tiempo real las cinco barras de emoción, el RomanticProgressionScore y la fase narrativa actual.
 
@@ -141,6 +171,8 @@ El HUD de debug (`WBP_KTFGDebugHUD`) muestra en tiempo real las cinco barras de 
 |-----------|-----------|-------|-------|----------|---------------|-------------|
 | `DA_Trope_EnemiestoLovers` | 5 | 0 | 80 | 0 | 0 | Partida desde la hostilidad; modificador de Affection alto |
 | `DA_Trope_FriendstoLovers` | 60 | 70 | 40 | 0 | 0 | Partida desde la amistad; avances más graduales |
+| `DA_Trope_Star-crossedLovers` | 20 | 25 | 45 | 15 | 15 | Partida desde la atracción intensa marcada por obstáculos externos |
+| `DA_Trope_FatedLove` | 35 | 30 | 40 | 10 | 20 | Partida desde la conexión predestinada desde el inicio |
 
 ---
 
