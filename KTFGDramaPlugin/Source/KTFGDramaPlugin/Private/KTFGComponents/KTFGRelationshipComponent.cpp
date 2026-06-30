@@ -13,11 +13,11 @@
 #include "KTFGData/KTFGRelationshipEventData.h"
 #include "KTFGCharacters/KTFGRomanceCharacterBase.h"
 #include "KTFGComponents/KTFGEmotionComponent.h"
+#include "KTFGBase/KTFGDramaSubsystem.h"
 #include "EngineUtils.h"
 #include "Components/Button.h"
 #include "Engine/Engine.h"
 
-DEFINE_LOG_CATEGORY_STATIC(LogKTFG, Log, All);
 
 UKTFGRelationshipComponent::UKTFGRelationshipComponent()
 {
@@ -118,9 +118,29 @@ void UKTFGRelationshipComponent::SetRomanceProfile(UKTFGRomanceTropeData* NewRel
 
 void UKTFGRelationshipComponent::SetRelatedCharacter(AKTFGRomanceCharacterBase* NewCharacterB)
 {
-    if (!NewCharacterB || NewCharacterB == GetOwner()) return;
+    // Caso 1: limpiar la relación
+    if (NewCharacterB == nullptr)
+    {
+        CharacterB = nullptr;
+        RelationshipTrope = nullptr;
+        bInitialTropeValuesApplied = false;
+        RomanticProgressionScore = 0.0f;
+        CurrentPhase = EKTFGStoryPhase::Attraction;
+        FiredEventIDs.Empty();
+        return;
+    }
+
+    // Caso 2: evitar autorelación
+    if (NewCharacterB == GetOwner())
+    {
+        UE_LOG(LogKTFG, Warning, TEXT("KTFG [%s]: SetRelatedCharacter bloqueado; el personaje no puede relacionarse consigo mismo."),
+            *GetOwner()->GetName());
+        return;
+    }
 
     CharacterB = NewCharacterB;
+    bInitialTropeValuesApplied = false;
+
     TryApplyTropeInitialValues();
     RecalculateRelationshipState();
 }

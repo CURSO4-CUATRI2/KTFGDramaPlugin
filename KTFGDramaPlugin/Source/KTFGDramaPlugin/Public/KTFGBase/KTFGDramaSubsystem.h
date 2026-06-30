@@ -16,6 +16,8 @@
 #include "KTFGData/KTFGRelationshipConfigData.h"
 #include "KTFGDramaSubsystem.generated.h"
 
+DECLARE_LOG_CATEGORY_EXTERN(LogKTFG, Log, All);
+
 class AKTFGRomanceCharacterBase;
 class UKTFGRomanceTropeData;
 class UKTFGRelationshipComponent;

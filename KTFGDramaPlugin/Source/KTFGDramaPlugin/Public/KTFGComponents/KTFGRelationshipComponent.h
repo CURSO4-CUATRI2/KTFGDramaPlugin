@@ -41,6 +41,7 @@ class UButton;
 // ── DELEGATES ─────────────────────────────────────────────────────────────────
 
 /** Notifica a Blueprint cuando la relación avanza a una nueva fase narrativa. */
+UDELEGATE()
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(
     FOnPhaseChanged,
     EKTFGStoryPhase, OldPhase,
@@ -48,6 +49,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(
 );
 
 /** Notifica a Blueprint cuando un evento relacional supera sus condiciones. */
+UDELEGATE()
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(
     FOnRelationshipEventFired,
     UKTFGRelationshipEventData*, EventData,

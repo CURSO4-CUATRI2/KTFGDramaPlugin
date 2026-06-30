@@ -13,7 +13,7 @@
 #include "KTFGCharacters/KTFGRomanceCharacterBase.h"
 #include "KTFGComponents/KTFGRelationshipComponent.h"
 
-DEFINE_LOG_CATEGORY_STATIC(LogKTFG, Log, All);
+DEFINE_LOG_CATEGORY(LogKTFG);
 
 // ─────────────────────────────────────────────────────────────────────────────
 // CICLO DE VIDA DEL SUBSISTEMA
