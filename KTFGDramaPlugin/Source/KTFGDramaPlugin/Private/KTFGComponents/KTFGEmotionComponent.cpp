@@ -94,18 +94,6 @@ void UKTFGEmotionComponent::ModifyVulnerability(float Delta)
 // UTILIDADES
 // ─────────────────────────────────────────────────────────────────────────────
 
-void UKTFGEmotionComponent::ResetEmotions()
-{
-	// Pride se resetea a 50 (valor neutro), no a 0,
-	// para evitar que el reset coloque al personaje en un estado
-	// de orgullo nulo que no refleja ningún contexto narrativo real.
-	Affection = 0.0f;
-	Trust = 0.0f;
-	Pride = 50.0f;
-	Jealousy = 0.0f;
-	Vulnerability = 0.0f;
-}
-
 float UKTFGEmotionComponent::ClampEmotionValue(float Value) const
 {
 	return FMath::Clamp(Value, 0.0f, 100.0f);

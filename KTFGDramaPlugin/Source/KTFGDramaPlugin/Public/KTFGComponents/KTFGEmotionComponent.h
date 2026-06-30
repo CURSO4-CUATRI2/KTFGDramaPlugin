@@ -130,17 +130,6 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure, Category = "KTFG|Emotion")
     float GetVulnerability() const { return Vulnerability; }
 
-
-    // ── RESET ─────────────────────────────────────────────────────────────────
-
-    /**
-     * Devuelve todas las emociones a sus valores por defecto (los del UPROPERTY).
-     * Útil cuando se reinicia una ruta narrativa o se asigna un tropo nuevo
-     * antes de aplicar sus valores iniciales.
-     */
-    UFUNCTION(BlueprintCallable, Category = "KTFG|Emotion")
-    void ResetEmotions();
-
 private:
     // Centraliza el clamp para que todos los setters sean consistentes.
     float ClampEmotionValue(float Value) const;

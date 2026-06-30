@@ -18,7 +18,6 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin Class UKTFGEmotionComponent ****************************************************
 #define FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGEmotionComponent_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execResetEmotions); \
 	DECLARE_FUNCTION(execGetVulnerability); \
 	DECLARE_FUNCTION(execGetJealousy); \
 	DECLARE_FUNCTION(execGetPride); \

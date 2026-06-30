@@ -22,7 +22,6 @@ KTFGDRAMAPLUGIN_API UClass* Z_Construct_UClass_UKTFGSituationData_NoRegister();
 KTFGDRAMAPLUGIN_API UEnum* Z_Construct_UEnum_KTFGDramaPlugin_EKTFGStoryPhase();
 KTFGDRAMAPLUGIN_API UFunction* Z_Construct_UDelegateFunction_KTFGDramaPlugin_OnPhaseChanged__DelegateSignature();
 KTFGDRAMAPLUGIN_API UFunction* Z_Construct_UDelegateFunction_KTFGDramaPlugin_OnRelationshipEventFired__DelegateSignature();
-UMG_API UClass* Z_Construct_UClass_UButton_NoRegister();
 UPackage* Z_Construct_UPackage__Script_KTFGDramaPlugin();
 // ********** End Cross Module References **********************************************************
 
@@ -412,7 +411,6 @@ struct Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation_Statics
 	struct KTFGRelationshipComponent_eventTriggerSituation_Parms
 	{
 		UKTFGSituationData* Situation;
-		UButton* Button;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -421,20 +419,14 @@ struct Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation_Statics
 		{ "ModuleRelativePath", "Public/KTFGComponents/KTFGRelationshipComponent.h" },
 		{ "ToolTip", "Ejecuta una situaci\xc3\xb3n: aplica sus deltas emocionales y, si el bot\xc3\xb3n\nasociado no est\xc3\xa1 vac\xc3\xado, lo desactiva para evitar doble activaci\xc3\xb3n.\nLlama autom\xc3\xa1ticamente a RecalculateRelationshipState() al terminar." },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Button_MetaData[] = {
-		{ "EditInline", "true" },
-	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Situation;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_Button;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation_Statics::NewProp_Situation = { "Situation", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(KTFGRelationshipComponent_eventTriggerSituation_Parms, Situation), Z_Construct_UClass_UKTFGSituationData_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation_Statics::NewProp_Button = { "Button", nullptr, (EPropertyFlags)0x0010000000080080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(KTFGRelationshipComponent_eventTriggerSituation_Parms, Button), Z_Construct_UClass_UButton_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Button_MetaData), NewProp_Button_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation_Statics::NewProp_Situation,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation_Statics::NewProp_Button,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UKTFGRelationshipComponent, nullptr, "TriggerSituation", Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation_Statics::PropPointers), sizeof(Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation_Statics::KTFGRelationshipComponent_eventTriggerSituation_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation_Statics::Function_MetaDataParams), Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation_Statics::Function_MetaDataParams)},  };
@@ -451,10 +443,9 @@ UFunction* Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation()
 DEFINE_FUNCTION(UKTFGRelationshipComponent::execTriggerSituation)
 {
 	P_GET_OBJECT(UKTFGSituationData,Z_Param_Situation);
-	P_GET_OBJECT(UButton,Z_Param_Button);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->TriggerSituation(Z_Param_Situation,Z_Param_Button);
+	P_THIS->TriggerSituation(Z_Param_Situation);
 	P_NATIVE_END;
 }
 // ********** End Class UKTFGRelationshipComponent Function TriggerSituation ***********************
@@ -577,7 +568,7 @@ struct Z_Construct_UClass_UKTFGRelationshipComponent_Statics
 		{ &Z_Construct_UFunction_UKTFGRelationshipComponent_ResetFiredEvents, "ResetFiredEvents" }, // 1909825483
 		{ &Z_Construct_UFunction_UKTFGRelationshipComponent_SetRelatedCharacter, "SetRelatedCharacter" }, // 3519384932
 		{ &Z_Construct_UFunction_UKTFGRelationshipComponent_SetRomanceProfile, "SetRomanceProfile" }, // 1300703475
-		{ &Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation, "TriggerSituation" }, // 2275391315
+		{ &Z_Construct_UFunction_UKTFGRelationshipComponent_TriggerSituation, "TriggerSituation" }, // 3607615740
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -642,10 +633,10 @@ UKTFGRelationshipComponent::~UKTFGRelationshipComponent() {}
 struct Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h__Script_KTFGDramaPlugin_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UKTFGRelationshipComponent, UKTFGRelationshipComponent::StaticClass, TEXT("UKTFGRelationshipComponent"), &Z_Registration_Info_UClass_UKTFGRelationshipComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UKTFGRelationshipComponent), 3117657079U) },
+		{ Z_Construct_UClass_UKTFGRelationshipComponent, UKTFGRelationshipComponent::StaticClass, TEXT("UKTFGRelationshipComponent"), &Z_Registration_Info_UClass_UKTFGRelationshipComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UKTFGRelationshipComponent), 3522497211U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h__Script_KTFGDramaPlugin_1158318764(TEXT("/Script/KTFGDramaPlugin"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h__Script_KTFGDramaPlugin_1909149638(TEXT("/Script/KTFGDramaPlugin"),
 	Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h__Script_KTFGDramaPlugin_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h__Script_KTFGDramaPlugin_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

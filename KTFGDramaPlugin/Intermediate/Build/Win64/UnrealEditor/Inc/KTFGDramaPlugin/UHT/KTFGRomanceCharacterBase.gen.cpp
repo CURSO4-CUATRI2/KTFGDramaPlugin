@@ -312,12 +312,6 @@ struct Z_Construct_UClass_AKTFGRomanceCharacterBase_Statics
 		{ "ModuleRelativePath", "Public/KTFGCharacters/KTFGRomanceCharacterBase.h" },
 		{ "ToolTip", "Rasgos de personalidad que modulan c\xc3\xb3mo las situaciones afectan a este personaje." },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PairID_MetaData[] = {
-		{ "Category", "KTFG|Identity" },
-		{ "Comment", "/** ID de pareja (legacy). En el flujo con Subsistema el emparejamiento\n     *  se gestiona a trav\xc3\xa9s de KTFGRelationshipConfigData, no de este campo. */" },
-		{ "ModuleRelativePath", "Public/KTFGCharacters/KTFGRomanceCharacterBase.h" },
-		{ "ToolTip", "ID de pareja (legacy). En el flujo con Subsistema el emparejamiento\nse gestiona a trav\xc3\xa9s de KTFGRelationshipConfigData, no de este campo." },
-	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SceneRoot;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_EmotionComponent;
@@ -329,7 +323,6 @@ struct Z_Construct_UClass_AKTFGRomanceCharacterBase_Statics
 	static const UECodeGen_Private::FBytePropertyParams NewProp_CharacterRole_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_CharacterRole;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_PersonalityData;
-	static const UECodeGen_Private::FNamePropertyParams NewProp_PairID;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -352,7 +345,6 @@ const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AKTFGRomanceChar
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AKTFGRomanceCharacterBase_Statics::NewProp_CharacterRole_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AKTFGRomanceCharacterBase_Statics::NewProp_CharacterRole = { "CharacterRole", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AKTFGRomanceCharacterBase, CharacterRole), Z_Construct_UEnum_KTFGDramaPlugin_EKTFGRomanceRole, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CharacterRole_MetaData), NewProp_CharacterRole_MetaData) }; // 1111410154
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AKTFGRomanceCharacterBase_Statics::NewProp_PersonalityData = { "PersonalityData", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AKTFGRomanceCharacterBase, PersonalityData), Z_Construct_UClass_UKTFGCharacterPersonalityData_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PersonalityData_MetaData), NewProp_PersonalityData_MetaData) };
-const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_AKTFGRomanceCharacterBase_Statics::NewProp_PairID = { "PairID", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AKTFGRomanceCharacterBase, PairID), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PairID_MetaData), NewProp_PairID_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AKTFGRomanceCharacterBase_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AKTFGRomanceCharacterBase_Statics::NewProp_SceneRoot,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AKTFGRomanceCharacterBase_Statics::NewProp_EmotionComponent,
@@ -364,7 +356,6 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AKTFGRoma
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AKTFGRomanceCharacterBase_Statics::NewProp_CharacterRole_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AKTFGRomanceCharacterBase_Statics::NewProp_CharacterRole,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AKTFGRomanceCharacterBase_Statics::NewProp_PersonalityData,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AKTFGRomanceCharacterBase_Statics::NewProp_PairID,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AKTFGRomanceCharacterBase_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AKTFGRomanceCharacterBase_Statics::DependentSingletons[])() = {
@@ -407,10 +398,10 @@ struct Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Buil
 		{ EKTFGRomanceRole_StaticEnum, TEXT("EKTFGRomanceRole"), &Z_Registration_Info_UEnum_EKTFGRomanceRole, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1111410154U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AKTFGRomanceCharacterBase, AKTFGRomanceCharacterBase::StaticClass, TEXT("AKTFGRomanceCharacterBase"), &Z_Registration_Info_UClass_AKTFGRomanceCharacterBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AKTFGRomanceCharacterBase), 162825247U) },
+		{ Z_Construct_UClass_AKTFGRomanceCharacterBase, AKTFGRomanceCharacterBase::StaticClass, TEXT("AKTFGRomanceCharacterBase"), &Z_Registration_Info_UClass_AKTFGRomanceCharacterBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AKTFGRomanceCharacterBase), 3928907968U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGCharacters_KTFGRomanceCharacterBase_h__Script_KTFGDramaPlugin_3320573633(TEXT("/Script/KTFGDramaPlugin"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGCharacters_KTFGRomanceCharacterBase_h__Script_KTFGDramaPlugin_3958498423(TEXT("/Script/KTFGDramaPlugin"),
 	Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGCharacters_KTFGRomanceCharacterBase_h__Script_KTFGDramaPlugin_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGCharacters_KTFGRomanceCharacterBase_h__Script_KTFGDramaPlugin_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGCharacters_KTFGRomanceCharacterBase_h__Script_KTFGDramaPlugin_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGCharacters_KTFGRomanceCharacterBase_h__Script_KTFGDramaPlugin_Statics::EnumInfo));

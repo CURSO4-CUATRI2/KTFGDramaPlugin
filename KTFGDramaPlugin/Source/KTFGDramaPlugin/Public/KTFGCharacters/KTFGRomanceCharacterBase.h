@@ -83,11 +83,6 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "KTFG|Identity")
     UKTFGCharacterPersonalityData* PersonalityData = nullptr;
 
-    /** ID de pareja (legacy). En el flujo con Subsistema el emparejamiento
-     *  se gestiona a través de KTFGRelationshipConfigData, no de este campo. */
-    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "KTFG|Identity")
-    FName PairID = NAME_None;
-
     // ── Funciones ────────────────────────────────────────────────────────────
 
     /** Acceso rápido al EmotionComponent. Equivalente a FindComponentByClass pero tipado. */

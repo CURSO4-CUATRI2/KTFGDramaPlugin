@@ -17,28 +17,27 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 class AKTFGRomanceCharacterBase;
-class UButton;
 class UKTFGRelationshipEventData;
 class UKTFGRomanceTropeData;
 class UKTFGSituationData;
 enum class EKTFGStoryPhase : uint8;
 
 // ********** Begin Delegate FOnPhaseChanged *******************************************************
-#define FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_49_DELEGATE \
+#define FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_47_DELEGATE \
 KTFGDRAMAPLUGIN_API void FOnPhaseChanged_DelegateWrapper(const FMulticastScriptDelegate& OnPhaseChanged, EKTFGStoryPhase OldPhase, EKTFGStoryPhase NewPhase);
 
 
 // ********** End Delegate FOnPhaseChanged *********************************************************
 
 // ********** Begin Delegate FOnRelationshipEventFired *********************************************
-#define FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_57_DELEGATE \
+#define FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_55_DELEGATE \
 KTFGDRAMAPLUGIN_API void FOnRelationshipEventFired_DelegateWrapper(const FMulticastScriptDelegate& OnRelationshipEventFired, UKTFGRelationshipEventData* EventData, AKTFGRomanceCharacterBase* FiredBy);
 
 
 // ********** End Delegate FOnRelationshipEventFired ***********************************************
 
 // ********** Begin Class UKTFGRelationshipComponent ***********************************************
-#define FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_65_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_63_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execResetFiredEvents); \
 	DECLARE_FUNCTION(execHasEventFired); \
 	DECLARE_FUNCTION(execCheckAndFireEvents); \
@@ -51,7 +50,7 @@ KTFGDRAMAPLUGIN_API void FOnRelationshipEventFired_DelegateWrapper(const FMultic
 
 KTFGDRAMAPLUGIN_API UClass* Z_Construct_UClass_UKTFGRelationshipComponent_NoRegister();
 
-#define FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_65_INCLASS_NO_PURE_DECLS \
+#define FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_63_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUKTFGRelationshipComponent(); \
 	friend struct Z_Construct_UClass_UKTFGRelationshipComponent_Statics; \
@@ -62,7 +61,7 @@ public: \
 	DECLARE_SERIALIZER(UKTFGRelationshipComponent)
 
 
-#define FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_65_ENHANCED_CONSTRUCTORS \
+#define FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_63_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	UKTFGRelationshipComponent(UKTFGRelationshipComponent&&) = delete; \
 	UKTFGRelationshipComponent(const UKTFGRelationshipComponent&) = delete; \
@@ -72,13 +71,13 @@ public: \
 	NO_API virtual ~UKTFGRelationshipComponent();
 
 
-#define FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_62_PROLOG
-#define FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_65_GENERATED_BODY \
+#define FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_60_PROLOG
+#define FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_63_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_65_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_65_INCLASS_NO_PURE_DECLS \
-	FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_65_ENHANCED_CONSTRUCTORS \
+	FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_63_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_63_INCLASS_NO_PURE_DECLS \
+	FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGRelationshipComponent_h_63_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -447,38 +447,6 @@ DEFINE_FUNCTION(UKTFGEmotionComponent::execModifyVulnerability)
 }
 // ********** End Class UKTFGEmotionComponent Function ModifyVulnerability *************************
 
-// ********** Begin Class UKTFGEmotionComponent Function ResetEmotions *****************************
-struct Z_Construct_UFunction_UKTFGEmotionComponent_ResetEmotions_Statics
-{
-#if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "Category", "KTFG|Emotion" },
-		{ "Comment", "/**\n     * Devuelve todas las emociones a sus valores por defecto (los del UPROPERTY).\n     * \xc3\x9atil cuando se reinicia una ruta narrativa o se asigna un tropo nuevo\n     * antes de aplicar sus valores iniciales.\n     */" },
-		{ "ModuleRelativePath", "Public/KTFGComponents/KTFGEmotionComponent.h" },
-		{ "ToolTip", "Devuelve todas las emociones a sus valores por defecto (los del UPROPERTY).\n\xc3\x9atil cuando se reinicia una ruta narrativa o se asigna un tropo nuevo\nantes de aplicar sus valores iniciales." },
-	};
-#endif // WITH_METADATA
-	static const UECodeGen_Private::FFunctionParams FuncParams;
-};
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UKTFGEmotionComponent_ResetEmotions_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UKTFGEmotionComponent, nullptr, "ResetEmotions", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UKTFGEmotionComponent_ResetEmotions_Statics::Function_MetaDataParams), Z_Construct_UFunction_UKTFGEmotionComponent_ResetEmotions_Statics::Function_MetaDataParams)},  };
-UFunction* Z_Construct_UFunction_UKTFGEmotionComponent_ResetEmotions()
-{
-	static UFunction* ReturnFunction = nullptr;
-	if (!ReturnFunction)
-	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UKTFGEmotionComponent_ResetEmotions_Statics::FuncParams);
-	}
-	return ReturnFunction;
-}
-DEFINE_FUNCTION(UKTFGEmotionComponent::execResetEmotions)
-{
-	P_FINISH;
-	P_NATIVE_BEGIN;
-	P_THIS->ResetEmotions();
-	P_NATIVE_END;
-}
-// ********** End Class UKTFGEmotionComponent Function ResetEmotions *******************************
-
 // ********** Begin Class UKTFGEmotionComponent Function SetAffection ******************************
 struct Z_Construct_UFunction_UKTFGEmotionComponent_SetAffection_Statics
 {
@@ -711,7 +679,6 @@ void UKTFGEmotionComponent::StaticRegisterNativesUKTFGEmotionComponent()
 		{ "ModifyPride", &UKTFGEmotionComponent::execModifyPride },
 		{ "ModifyTrust", &UKTFGEmotionComponent::execModifyTrust },
 		{ "ModifyVulnerability", &UKTFGEmotionComponent::execModifyVulnerability },
-		{ "ResetEmotions", &UKTFGEmotionComponent::execResetEmotions },
 		{ "SetAffection", &UKTFGEmotionComponent::execSetAffection },
 		{ "SetJealousy", &UKTFGEmotionComponent::execSetJealousy },
 		{ "SetPride", &UKTFGEmotionComponent::execSetPride },
@@ -817,7 +784,6 @@ struct Z_Construct_UClass_UKTFGEmotionComponent_Statics
 		{ &Z_Construct_UFunction_UKTFGEmotionComponent_ModifyPride, "ModifyPride" }, // 2505529398
 		{ &Z_Construct_UFunction_UKTFGEmotionComponent_ModifyTrust, "ModifyTrust" }, // 3391102783
 		{ &Z_Construct_UFunction_UKTFGEmotionComponent_ModifyVulnerability, "ModifyVulnerability" }, // 143707604
-		{ &Z_Construct_UFunction_UKTFGEmotionComponent_ResetEmotions, "ResetEmotions" }, // 707590528
 		{ &Z_Construct_UFunction_UKTFGEmotionComponent_SetAffection, "SetAffection" }, // 2578120982
 		{ &Z_Construct_UFunction_UKTFGEmotionComponent_SetJealousy, "SetJealousy" }, // 1011511415
 		{ &Z_Construct_UFunction_UKTFGEmotionComponent_SetPride, "SetPride" }, // 2361409168
@@ -879,10 +845,10 @@ UKTFGEmotionComponent::~UKTFGEmotionComponent() {}
 struct Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGEmotionComponent_h__Script_KTFGDramaPlugin_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UKTFGEmotionComponent, UKTFGEmotionComponent::StaticClass, TEXT("UKTFGEmotionComponent"), &Z_Registration_Info_UClass_UKTFGEmotionComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UKTFGEmotionComponent), 414643935U) },
+		{ Z_Construct_UClass_UKTFGEmotionComponent, UKTFGEmotionComponent::StaticClass, TEXT("UKTFGEmotionComponent"), &Z_Registration_Info_UClass_UKTFGEmotionComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UKTFGEmotionComponent), 559247879U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGEmotionComponent_h__Script_KTFGDramaPlugin_1606518524(TEXT("/Script/KTFGDramaPlugin"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGEmotionComponent_h__Script_KTFGDramaPlugin_1281628456(TEXT("/Script/KTFGDramaPlugin"),
 	Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGEmotionComponent_h__Script_KTFGDramaPlugin_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Carla_Documents_K_TFG_DRAMA_KTFGDemo_Build_KTFGDramaPlugin_HostProject_Plugins_KTFGDramaPlugin_Source_KTFGDramaPlugin_Public_KTFGComponents_KTFGEmotionComponent_h__Script_KTFGDramaPlugin_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

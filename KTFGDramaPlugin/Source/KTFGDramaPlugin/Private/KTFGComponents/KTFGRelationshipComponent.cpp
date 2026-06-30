@@ -224,7 +224,7 @@ void UKTFGRelationshipComponent::ApplyTropeInitialValues()
 // SITUACIONES
 // ─────────────────────────────────────────────────────────────────────────────
 
-void UKTFGRelationshipComponent::TriggerSituation(UKTFGSituationData* Situation, UButton* Button)
+void UKTFGRelationshipComponent::TriggerSituation(UKTFGSituationData* Situation)
 {
     if (!Situation)
     {
@@ -251,13 +251,10 @@ void UKTFGRelationshipComponent::TriggerSituation(UKTFGSituationData* Situation,
     // Si hay botón asociado, deshabilitarlo para feedback visual inmediato.
     if (Situation->bRequiresMinScore && RomanticProgressionScore < Situation->MinRequiredScore)
     {
-        if (Button) Button->SetIsEnabled(false);
         UE_LOG(LogKTFG, Warning, TEXT("KTFG: '%s' bloqueada — score %.1f, requiere %.1f."),
             *Situation->SituationID.ToString(), RomanticProgressionScore, Situation->MinRequiredScore);
         return;
     }
-
-    if (Button) Button->SetIsEnabled(true);
 
     // Calcular los deltas finales aplicando los multiplicadores del tropo.
     // Los deltas base viven en el SituationData; el tropo ajusta el ritmo
@@ -303,15 +300,16 @@ void UKTFGRelationshipComponent::TriggerSituation(UKTFGSituationData* Situation,
         RomanticProgressionScore,
         *PhaseText);
 
-    if (GEngine)
-    {
-        GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow,
-            FString::Printf(TEXT("KTFG: [%s] '%s' | Score: %.1f | Fase: %s"),
-                RelationshipTrope ? *RelationshipTrope->TropeName.ToString() : TEXT("Sin tropo"),
-                *Situation->SituationID.ToString(),
-                RomanticProgressionScore,
-                *PhaseText));
-    }
+	//Mensaje en pantalla para debug visual rápido; comentar si no se necesita.
+    //if (GEngine)
+    //{
+    //    GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow,
+    //        FString::Printf(TEXT("KTFG: [%s] '%s' | Score: %.1f | Fase: %s"),
+    //            RelationshipTrope ? *RelationshipTrope->TropeName.ToString() : TEXT("Sin tropo"),
+    //            *Situation->SituationID.ToString(),
+    //            RomanticProgressionScore,
+    //            *PhaseText));
+    //}
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

@@ -35,8 +35,6 @@
 #include "KTFGRelationshipComponent.generated.h"
 
 class AKTFGRomanceCharacterBase;
-class UButton;
-
 
 // ── DELEGATES ─────────────────────────────────────────────────────────────────
 
@@ -143,7 +141,7 @@ public:
      * Llama automáticamente a RecalculateRelationshipState() al terminar.
      */
     UFUNCTION(BlueprintCallable, Category = "KTFG|Relationship")
-    void TriggerSituation(UKTFGSituationData* Situation, UButton* Button);
+    void TriggerSituation(UKTFGSituationData* Situation);
 
     /** Versión interna sin parámetros para llamadas desde BeginPlay. */
     void TryApplyTropeInitialValues();
